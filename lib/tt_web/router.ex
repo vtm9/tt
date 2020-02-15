@@ -9,18 +9,10 @@ defmodule TtWeb.Router do
     plug :put_secure_browser_headers
   end
 
-  pipeline :api do
-    plug :accepts, ["json"]
-  end
-
   scope "/", TtWeb do
     pipe_through :browser
 
     get "/", PageController, :index
+    resources "/customers", CustomerController
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", TtWeb do
-  #   pipe_through :api
-  # end
 end
