@@ -1,17 +1,16 @@
-defmodule Tt.Bill.Company do
+defmodule Tt.Customer do
   use Ecto.Schema
   import Ecto.Changeset
 
-  schema "companies" do
+  schema "customers" do
     field :name, :string
-    field :customer_id, :id
 
     timestamps()
   end
 
   @doc false
-  def changeset(company, attrs) do
-    company
+  def changeset(customer, attrs) do
+    customer
     |> cast(attrs, [:name])
     |> validate_required([:name])
   end

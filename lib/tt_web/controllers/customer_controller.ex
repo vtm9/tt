@@ -2,7 +2,7 @@ defmodule TtWeb.CustomerController do
   use TtWeb, :controller
 
   alias Tt.Bill
-  alias Tt.Bill.Customer
+  alias Tt.Customer
 
   def index(conn, _params) do
     customers = Bill.list_customers()

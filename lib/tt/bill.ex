@@ -6,7 +6,7 @@ defmodule Tt.Bill do
   import Ecto.Query, warn: false
   alias Tt.Repo
 
-  alias Tt.Bill.Customer
+  alias Tt.Customer
 
   @doc """
   Returns the list of customers.
@@ -102,7 +102,7 @@ defmodule Tt.Bill do
     Customer.changeset(customer, %{})
   end
 
-  alias Tt.Bill.Company
+  alias Tt.Company
 
   @doc """
   Returns the list of companies.

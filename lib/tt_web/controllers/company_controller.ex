@@ -2,7 +2,7 @@ defmodule TtWeb.CompanyController do
   use TtWeb, :controller
 
   alias Tt.Bill
-  alias Tt.Bill.Company
+  alias Tt.Company
 
   def index(conn, _params) do
     companies = Bill.list_companies()

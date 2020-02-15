@@ -33,8 +33,8 @@ defmodule TtWeb.CompanyControllerTest do
       assert %{id: id} = redirected_params(conn)
       assert redirected_to(conn) == Routes.company_path(conn, :show, id)
 
-      conn = get(conn, Routes.company_path(conn, :show, id))
-      assert html_response(conn, 200) =~ "Show Company"
+      new_conn = get(conn, Routes.company_path(conn, :show, id))
+      assert html_response(new_conn, 200) =~ "Show Company"
     end
 
     test "renders errors when data is invalid", %{conn: conn} do
@@ -59,8 +59,8 @@ defmodule TtWeb.CompanyControllerTest do
       conn = put(conn, Routes.company_path(conn, :update, company), company: @update_attrs)
       assert redirected_to(conn) == Routes.company_path(conn, :show, company)
 
-      conn = get(conn, Routes.company_path(conn, :show, company))
-      assert html_response(conn, 200) =~ "some updated name"
+      new_conn = get(conn, Routes.company_path(conn, :show, company))
+      assert html_response(new_conn, 200) =~ "some updated name"
     end
 
     test "renders errors when data is invalid", %{conn: conn, company: company} do
@@ -75,6 +75,7 @@ defmodule TtWeb.CompanyControllerTest do
     test "deletes chosen company", %{conn: conn, company: company} do
       conn = delete(conn, Routes.company_path(conn, :delete, company))
       assert redirected_to(conn) == Routes.company_path(conn, :index)
+
       assert_error_sent 404, fn ->
         get(conn, Routes.company_path(conn, :show, company))
       end

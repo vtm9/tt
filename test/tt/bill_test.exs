@@ -4,7 +4,7 @@ defmodule Tt.BillTest do
   alias Tt.Bill
 
   describe "customers" do
-    alias Tt.Bill.Customer
+    alias Tt.Customer
 
     @valid_attrs %{name: "some name"}
     @update_attrs %{name: "some updated name"}
@@ -63,7 +63,7 @@ defmodule Tt.BillTest do
   end
 
   describe "companies" do
-    alias Tt.Bill.Company
+    alias Tt.Company
 
     @valid_attrs %{name: "some name"}
     @update_attrs %{name: "some updated name"}
