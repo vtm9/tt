@@ -14,5 +14,6 @@ defmodule TtWeb.Router do
 
     get "/", PageController, :index
     resources "/customers", CustomerController
+    resources "/companies", CompanyController
   end
 end
